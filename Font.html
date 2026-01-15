@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Photo & AI Hub</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Link to external CSS -->
+<link rel="stylesheet" href="bir.css">
+</head>
+<body class="body-light">
+
+<!-- Hidden toggles -->
+<input type="checkbox" id="modeToggle">
+<input type="checkbox" id="accountToggle">
+
+<!-- Top navigation -->
+<div class="topbar">
+    <button class="btn" id="historyBtn">📜 History</button>
+    <label class="btn" for="modeToggle">☀️ / 🌙 Mode</label>
+    <label class="btn" for="accountToggle">👤 Account</label>
+</div>
+
+<!-- Main content -->
+<div class="center">
+    <!-- Loader circle -->
+    <div class="loader" id="loader"></div>
+
+    <!-- Output / AI result box -->
+    <div class="output-box" id="output">Welcome! Your results will appear here…</div>
+
+    <!-- Image preview -->
+    <img id="previewImg" class="preview">
+
+    <!-- File upload -->
+    <input type="file" id="photoInput" hidden>
+    <button class="btn upload-btn" onclick="photoInput.click()">⬆️ Upload Photo</button>
+
+    <!-- Action buttons -->
+    <div class="side-buttons">
+        <button class="btn" id="searchBtn">🔍 Search</button>
+        <button class="btn" id="aiBtn">🤖 Generate AI Output</button>
+    </div>
+</div>
+
+<!-- Account modal -->
+<div class="modal">
+    <label class="close" for="accountToggle">✖</label>
+    <h3>👤 Account</h3>
+    <input id="regName" placeholder="Your full name">
+    <input id="regEmail" placeholder="Email address">
+    <input id="regPass" type="password" placeholder="Password">
+    <button class="btn" onclick="registerUser()">Sign Up</button>
+    <br><br>
+    <button class="btn" onclick="loginUser()">Login</button>
+</div>
+
+<!-- History panel -->
+<div class="history-box" id="historyBox"></div>
+
+<!-- External JS -->
+<script src="br.js"></script>
+</body>
+</html>
