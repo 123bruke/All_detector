@@ -1,0 +1,185 @@
+/* final body design */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: 0.4s;
+}
+
+.body-light {
+    --bg1: #6a11cb;
+    --bg2: #2575fc;
+    --text: #ffffff;
+    --card: #ffffff22;
+    --glow: #ffffffaa;
+}
+
+.body-dark {
+    --bg1: #0f2027;
+    --bg2: #203a43;
+    --text: #f4f4f4;
+    --card: #00000055;
+    --glow: #00ffff66;
+}
+
+body {
+    color: var(--text);
+    background: linear-gradient(120deg, var(--bg1), var(--bg2));
+    background-size: 400% 400%;
+    animation: backgroundMove 12s infinite alternate;
+}
+
+@keyframes backgroundMove {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Top bar */
+.topbar {
+    position: fixed;
+    top: 12px;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    backdrop-filter: blur(12px);
+}
+
+/* major Buttons2  */
+.btn {
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    background: linear-gradient(45deg, #ff00cc, #3333ff, #00ffee);
+    background-size: 200% 200%;
+    animation: btnGradient 6s infinite alternate;
+    color: white;
+    box-shadow: 0 0 18px var(--glow);
+    transition: 0.25s;
+}
+
+@keyframes btnGradient {
+    0% { background-position: 0%; }
+    100% { background-position: 100%; }
+}
+
+.btn:hover {
+    transform: scale(1.12) translateY(-2px);
+    box-shadow: 0 0 25px white;
+}
+
+/* Center content */
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.upload-btn {
+    font-size: 22px;
+    padding: 20px 50px;
+    border-radius: 45px;
+}
+
+.side-buttons {
+    display: flex;
+    gap: 30px;
+}
+
+/* Loader */
+.loader {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 8px solid #ffffff55;
+    border-top: 8px solid #00ffcc;
+    animation: spin 1.2s linear infinite;
+    box-shadow: 0 0 25px #00ffee;
+    display: none;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Output  files box  */
+.output-box {
+    padding: 18px 25px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #ffffff22, #00000033);
+    backdrop-filter: blur(12px);
+    animation: pulse 3s infinite alternate;
+    min-width: 260px;
+    min-height: 60px;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 6px var(--glow); }
+    100% { box-shadow: 0 0 28px var(--glow); }
+}
+
+/* Image preview */
+.preview {
+    max-width: 240px;
+    border-radius: 20px;
+    margin-top: 10px;
+    display: none;
+}
+
+/* Modal (account) */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+    pointer-events: none;
+    background: var(--card);
+    padding: 25px;
+    width: 320px;
+    border-radius: 22px;
+    backdrop-filter: blur(18px);
+    transition: 0.45s;
+}
+
+#accountToggle:checked ~ .modal {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 8px;
+}
+
+.close {
+    float: right;
+    cursor: pointer;
+}
+
+/* Histor */ 
+.history-box {
+    position: fixed;
+    left: 15px;
+    top: 65px;
+    background: var(--card);
+    backdrop-filter: blur(12px);
+    padding: 10px;
+    border-radius: 15px;
+    max-height: 65%;
+    overflow: auto;
+    display: none;
+}
