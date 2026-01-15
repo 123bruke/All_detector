@@ -1,6 +1,5 @@
 # All_detector
 This projects is detect objects by pretrain ML model 
-# 🧠 AI Image Detection Web App (Flask + YOLO + ResNet)
 
 This project is a **Flask-based AI web application** that allows users to upload images and automatically detect objects using **YOLOv8** and **ResNet18**.
 
